@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: A template to create an S3 bucket.
+
+Resources:
+  MyS3Bucket:
+    Type: 'AWS::S3::Bucket'
+    Properties: 
+      BucketName: 'my-unique-bucket-name-123456 # Replace with a globally unique bucket name
+      AccessControl: 'Private' # Options: Private, PublicRead, PublicReadWrite, AuthenticatedRead, BucketOwnerRead, BucketOwnerFullControl
+      VersioningConfiguration:
+        Status: 'Enabled' # Options: Enabled, Suspended
+
+Outputs:
+  BucketName:
+    Description: 'The name of the S3 bucket'
+    Value: !Ref MyS3Bucket
+
+  BucketArn:
+    Description: 'The ARN of the S3 bucket'
+    Value: !GetAtt MyS3Bucket.Arn
