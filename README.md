@@ -1,3 +1,3 @@
-# mycfn
+f# mycfn
 this
 f
